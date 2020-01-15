@@ -6,6 +6,12 @@ variable "efs_name" {
   type        = string
 }
 
+variable "encrypted" {
+  description = "Turn encryption on or off"
+  type        = bool
+  default     = false
+}
+
 variable "vpc_id" {
   description = "The name of the VPC that EFS will be deployed to"
   type        = string

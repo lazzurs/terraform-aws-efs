@@ -29,6 +29,7 @@ resource "aws_security_group" "this" {
 
 resource "aws_efs_file_system" "this" {
   creation_token = var.efs_name
+  encrypted      = var.encrypted
 
   tags = merge(
     {
