@@ -26,6 +26,7 @@ module "efs-0" {
 |------|-------------|:----:|:-----:|:-----:|
 | vpc_name | The id of the VPC that EFS will be deployed to | string | | yes |
 | efs_name | The name of the Elastic File System | string | | yes |
+| encrypted | Turn encryption on or off | bool | false | no |
 | subnet_filter | Tag name to filter on for the EFS mount targets | string | "private" | no
 | tags | A map of tags to add to all resources | map(string) | {} | no
 

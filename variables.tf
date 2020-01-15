@@ -3,7 +3,13 @@
 #------------------------------------------------------------------------------
 variable "efs_name" {
   description = "The name of the Elastic File System"
-  type        = "string"
+  type        = string
+}
+
+variable "encrypted" {
+  description = "Turn encryption on or off"
+  type        = bool
+  default     = false
 }
 
 variable "vpc_id" {
