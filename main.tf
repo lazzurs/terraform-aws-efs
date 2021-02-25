@@ -1,6 +1,9 @@
 #------------------------------------------------------------------------------
 # Create EFS
 #------------------------------------------------------------------------------
+data "aws_vpc" "selected" {
+  id = var.vpc_id
+}
 
 resource "aws_security_group" "this" {
   name        = var.efs_name
@@ -12,6 +15,14 @@ resource "aws_security_group" "this" {
     to_port   = 2049
     self      = true
   }
+
+  ingress {
+    from_port   = 2049
+    to_port     = 2049
+    protocol    = "tcp"
+    cidr_blocks = [data.aws_vpc.selected.cidr_block]
+  }
+
   egress {
     from_port = 0
     to_port   = 0
