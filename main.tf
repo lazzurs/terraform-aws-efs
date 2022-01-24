@@ -33,7 +33,7 @@ resource "aws_efs_file_system" "this" {
 
   lifecycle {
     ignore_changes = [size_in_bytes]
-
+  }
 
   tags = merge(
     {
