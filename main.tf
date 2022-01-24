@@ -31,6 +31,10 @@ resource "aws_efs_file_system" "this" {
   creation_token = var.efs_name
   encrypted      = var.encrypted
 
+  lifecycle {
+    ignore_changes = [size_in_bytes]
+
+
   tags = merge(
     {
       "Name" = var.efs_name
