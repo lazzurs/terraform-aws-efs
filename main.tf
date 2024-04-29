@@ -32,7 +32,7 @@ resource "aws_efs_file_system" "this" {
   encrypted      = var.encrypted
 
   lifecycle {
-    ignore_changes = [size_in_bytes]
+    ignore_changes = [size_in_bytes.value]
   }
 
   tags = merge(
